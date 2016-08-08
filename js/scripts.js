@@ -5,22 +5,24 @@ alert(sentence);
 
 var firstLast = function(sentence) {
   var first = sentence.charAt(0);
-  var last = sentence.charAt((sentence.length) - 2);
+  var last = sentence.charAt((sentence.length) - 1);
   return first.toUpperCase() + last.toUpperCase();
 }
-alert(firstLast(sentence));
 
 var swap = function(sentence) {
-  var char1 = sentence.charAt((sentence.length) - 2);
+  var char1 = sentence.charAt((sentence.length) - 1);
   var char2 = sentence.charAt(0);
   return char1.toUpperCase() + char2.toUpperCase();
 }
 
-alert(swap(sentence));
-
 var call = function(sentence) {
-  return swap(firstLast(sentence));
+  return sentence + swap(firstLast(sentence));
 }
 
-alert(call(sentence));
+var divide = function(sentence) {
+  var letter = sentence.charAt((sentence.length / 2).toFixed());
+  return letter + call(sentence);
+}
+
+alert(divide(sentence));
 })
